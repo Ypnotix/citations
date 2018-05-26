@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: auto;
+		background-color: #333;
+	}
+
+	li {
+		float: left;
+	}
+
+	li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	li:hover {
+		background-color: #111;
+	}
+	.active {
+    background-color: #009933;
+	}
+
+	/*Button:*/
+
+	.button {
+		display: inline-block;
+		background-color: #009933;
+		border: 1px solid;
+		color: #FFFFFF;
+		border-color: #000000;
+		border-radius: 50px;
+		text-align: center;
+		font-size: 15px;
+		padding: 20px;
+		width: 200px;
+		transition: all 0.5s;
+		cursor: pointer;
+		margin: 5px;
+	}
+	.button span {
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		transition: 0.5s;
+	}
+	.button span:after{
+		content: '\00bb';
+		position: absolute;
+		opacity: 0;
+		top: 0;
+		right: -30px;
+		transition: 0.5s;
+	}
+	.button:hover span{
+		padding-right: 25px;
+	}
+	.button:hover span:after {
+		opacity: 1;
+		right: 0;
+	}
+
+</style>
+
+	<ul>
+	  <li><a class="active" href="home">Home</a></li>
+	  <li><a href="ajout">Soumettre une citation</a></li>
+	  <li style="float:right"><a href="contact">Nous contacter</a></li>
+	</ul>
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+	<div style="padding-top: 10%;">
+	<CENTER><h1>Une des citations des plus distinguées de nos professeurs préférés :</h1></CENTER>
+	</div>
+
+
+	<CENTER><p>"<%= phrase[Math.round(Math.random() * (phrase.length - 1))]%>"</p></CENTER>
+
+	<div style="padding-top: 10%;">
+	<CENTER>
+	<FORM><button class="button" style="vertical-align:middle" onclick="history.go(0)"><span>La suivante</span></button></FORM>
+	</p>
+	</div>
+	</CENTER>
+</body>
+
+
+</html>

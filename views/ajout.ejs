@@ -1,0 +1,170 @@
+<meta charset="UTF-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact page</title>
+
+	<style>
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: auto;
+			background-color: #333;
+		}
+
+		li {
+			float: left;
+		}
+
+		li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		li:hover {
+			background-color: #111;
+		}
+		.active {
+	    background-color: #009933;
+		}
+
+		input[type=text] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: 1px solid #555;
+			outline: none;;
+		}
+		input[type=text]:focus {
+			border: 2px solid #33ccff;
+			border-radius: 5px;
+		}
+			input[type=email] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: 1px solid #555;
+			outline: none;;
+		}
+		input[type=email]:focus {
+			border: 2px solid #33ccff;
+			border-radius: 5px;
+		}
+		input[type=submit] {
+		    background-color: #009933;
+		    color: white;
+		    padding: 12px 20px;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+		    float: left;
+		    margin-left: 50px;
+		}
+
+		input[type=submit]:hover {
+	    background-color: #45a049;
+	    }
+
+		p.espace {
+			line-height: 5;
+		}
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			padding-top: 100px;
+			width: 98.5%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgb(0,0,0);
+			background-color: rgba(0,0,0,0.4);
+		}
+		.modal-content {
+			background-color: #fefefe;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #888;
+		}
+
+		.close {
+			color: #aaaaaa;
+			float: left;
+			font-size: 28px;
+			font-weight: bold;
+		}
+		.close:hover,
+		.close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+	</style>
+
+	<ul>
+	  <li><a href="home">Home</a></li>
+	  <li><a class="active" href="ajout">Soumettre une citation</a></li>
+	  <li style="float:right"><a href="contact">Nous contacter</a></li>
+	</ul>
+
+
+</head>
+<body onload="myFunction()">
+
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&#10006;&nbsp;&nbsp;</span>
+			<p>Merci de bien vouloir nous contacter afin de recevoir un code vous permettant de poster vous citations</p>
+		</div>
+	</div>
+
+
+	<p class="espace">
+	<form>
+		<label for="email">Adresse email</label>
+		<input type="email" id="mail" name="mail" placeholder="Adresse email">
+		<label for="code">Code</label>
+		<input type="text" id="code" name="code" placeholder="Code">
+		<p class="espace">
+		<textarea id="citation" name="citation" placeholder="Citation(s)..." style="margin: 0px; width: 455px; height: 106px;"></textarea>
+		<p class="espace">
+		<input type="submit" name="Valider" onclick="ajout()">
+	</form>
+
+	<p id="test"></p>
+
+
+	<script>
+		function myFunction() {
+			var modal = document.getElementById('myModal');
+			var span = document.getElementsByClassName("close")[0];
+
+			modal.style.display = "block";
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}		
+		}
+	</script>
+	<script>
+		function ajout() {
+			var nv = phrase;
+			nv[nv.length] = document.getElementById('citation');
+			document.getElementById("test").innerHTML = document.getElementById('citation');
+		}
+	</script>
+
+
+</body>
+</html>
